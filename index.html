@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ritika Abha | Designer clothing, Karol Bagh (concept demo)</title>
+<meta name="description" content="A designer clothing studio in Karol Bagh. Browse looks by occasion and ask about any piece on WhatsApp. A concept demo, not the official site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Brief: Ritika Abha, designer clothing store, Karol Bagh, Delhi. Occasion wear: lehengas, sarees, suits.
+   Idea: a lookbook you shop by occasion. Choose Wedding, Sangeet, Festive or Evening and the rail re-sorts; every piece has an ask-on-WhatsApp button that names the look.
+   Photos: labelled Unsplash stock, placeholders for the studio's own photographs. */
+:root{--ivory:#f8f1e7;--paper:#efe4d3;--oxb:#5a1424;--mar:#c88a1d;--ink:#26141a;--mute:#7b6a62;--ser:'Cormorant',Georgia,serif;--sans:'Jost',system-ui,sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ivory);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--mar);outline-offset:3px}
+.wrap{width:min(1220px,100% - 40px);margin:0 auto}
+h1,h2,h3{font-family:var(--ser);font-weight:500;line-height:.96;letter-spacing:-.01em}
+h2{font-size:clamp(2.5rem,5.8vw,4.8rem)}em{font-style:italic;color:var(--oxb)}
+.lab{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;font-weight:500;color:var(--mar)}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.8em;background:var(--oxb);color:#fff;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:transform .3s,background .3s}
+.btn:hover{transform:translateY(-2px);background:var(--ink)}.btn.o{background:none;color:inherit;border:1px solid currentColor}.btn.g{background:var(--mar);color:#2a1a00}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}.rv.in{opacity:1;transform:none}
+nav{position:fixed;inset:0 0 auto;z-index:50;padding:16px 0;background:rgba(248,241,231,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(38,20,26,.08)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--ser);font-size:1.7rem;text-decoration:none;font-weight:600;letter-spacing:.1em;text-transform:uppercase;line-height:1}.logo small{display:block;font-family:var(--sans);font-size:.5rem;letter-spacing:.5em;color:var(--mar);margin-top:3px;font-weight:500}
+nav ul{display:flex;gap:28px;list-style:none;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}nav ul a{text-decoration:none;opacity:.7}nav ul a:hover{opacity:1;color:var(--oxb)}
+.hero{padding:112px 0 0;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:end;min-height:calc(100svh - 112px)}
+.hero h1{font-size:clamp(4rem,11vw,10rem);margin-bottom:22px}.hero h1 em{display:block;padding-left:.8em}
+.hero p.s{max-width:420px;color:var(--mute);margin-bottom:28px}
+.fan{position:relative;height:min(78svh,720px);margin-bottom:-2px}
+.fan img{position:absolute;bottom:0;object-fit:cover;box-shadow:0 30px 50px -26px rgba(38,20,26,.55);transition:transform .8s var(--ease)}
+.fan .a{left:0;width:44%;height:76%;transform:rotate(-5deg);transform-origin:bottom;z-index:1}
+.fan .b{left:28%;width:46%;height:94%;z-index:3}.fan .c{right:0;width:44%;height:80%;transform:rotate(5deg);transform-origin:bottom;z-index:2}
+.fan:hover .a{transform:rotate(-9deg) translateX(-14px)}.fan:hover .c{transform:rotate(9deg) translateX(14px)}
+.mq{background:var(--oxb);color:var(--paper);padding:13px 0;overflow:hidden;white-space:nowrap;font-family:var(--ser);font-style:italic;font-size:1.4rem}
+.mq div{display:inline-block;animation:mq 34s linear infinite}.mq i{color:var(--mar);font-style:normal;margin:0 1.2em}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:100px 0}
+.filt{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 34px}
+.filt button{padding:.65em 1.4em;border:1px solid rgba(38,20,26,.22);border-radius:99px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:.3s}.filt button.on{background:var(--oxb);border-color:var(--oxb);color:#fff}
+.rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 26px;margin:0 -20px;scrollbar-width:thin}
+.look{flex:0 0 min(300px,74vw);scroll-snap-align:start;transition:opacity .5s,transform .5s var(--ease)}.look.hide{display:none}
+.look .im{overflow:hidden;aspect-ratio:3/4.3;background:var(--paper)}.look img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}.look:hover img{transform:scale(1.06)}
+.look h3{font-size:1.6rem;margin:14px 0 2px}.look p{font-size:.85rem;color:var(--mute)}
+.look a{display:inline-block;margin-top:10px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--oxb);text-decoration:none;border-bottom:1px solid currentColor}
+.dark{background:var(--oxb);color:var(--paper)}.dark em{color:var(--mar)}.dark .lab{color:var(--mar)}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.fit img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.st{list-style:none;margin-top:30px;display:grid;gap:0}.st li{display:grid;grid-template-columns:54px 1fr;gap:6px;padding:18px 0;border-top:1px solid rgba(239,228,211,.2)}
+.st li:last-child{border-bottom:1px solid rgba(239,228,211,.2)}.st b{font-family:var(--ser);font-size:2rem;color:var(--mar);font-weight:500;line-height:1}.st h3{font-size:1.5rem}.st p{font-size:.9rem;opacity:.75}
+.enq{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.form{background:#fff;padding:30px;display:grid;gap:18px;border:1px solid rgba(38,20,26,.1)}
+.form label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:8px;font-weight:500}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips button{padding:.5em 1.1em;border:1px solid rgba(38,20,26,.2);border-radius:99px;font-size:.85rem;transition:.3s}.chips button.on{background:var(--oxb);color:#fff;border-color:var(--oxb)}
+.form input{width:100%;border:1px solid rgba(38,20,26,.2);padding:.8em 1em;font:inherit;background:none}
+footer{padding:30px 0 90px;font-size:.78rem;color:var(--mute);text-align:center}
+.sticky{display:none}
+@media(max-width:860px){nav ul{display:none}.hero .wrap,.fit,.enq{grid-template-columns:1fr;gap:34px}.fan{height:420px}section{padding:76px 0}.hero h1 em{padding-left:0}
+.sticky{display:flex;position:fixed;inset:auto 0 0;z-index:60;padding:10px 16px;background:var(--ivory);border-top:1px solid rgba(0,0,0,.08)}.sticky .btn{flex:1;justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#">Ritika Abha<small>Designer wear · Karol Bagh</small></a><ul><li><a href="#looks">Lookbook</a></li><li><a href="#fit">Made for you</a></li><li><a href="#enquire">Visit</a></li></ul><a class="btn" href="#enquire" style="padding:.7em 1.3em">Enquire</a></div></nav>
+
+<header class="hero"><div class="wrap"><div><p class="lab">Designer clothing · Karol Bagh, Delhi</p><h1>Dressed for<em>the day.</em></h1><p class="s">Lehengas, sarees and occasion wear, chosen for the moment you need them for. Browse the lookbook, then ask about any piece on WhatsApp.</p><a class="btn" href="#looks">Open the lookbook</a></div>
+<div class="fan" aria-hidden="true"><img class="a" src="img/jaali.jpg" alt=""><img class="c" src="img/pink.jpg" alt=""><img class="b" src="img/lilac.jpg" alt=""></div></div></header>
+<div class="mq"><div id="mq"></div></div>
+
+<section id="looks"><div class="wrap"><p class="lab rv">The lookbook</p><h2 class="rv">Pick the <em>occasion.</em></h2>
+<div class="filt" id="filt"></div><div class="rail" id="rail"></div>
+<p style="color:var(--mute);font-size:.76rem">Stock photographs (Unsplash contributors), placeholders for the studio's own. Names and details are sample content.</p></div></section>
+
+<section class="dark" id="fit"><div class="wrap fit"><img src="img/maroon.jpg" alt="Bridal lehenga in maroon and gold" loading="lazy"><div><p class="lab">Made for you</p><h2 class="rv">From a <em>look</em> to your fit.</h2>
+<ul class="st"><li><b>1</b><div><h3>Choose a look</h3><p>Pick from the lookbook, or bring a reference.</p></div></li><li><b>2</b><div><h3>Share your size</h3><p>Measurements by WhatsApp or at the studio.</p></div></li><li><b>3</b><div><h3>Trial and tailoring</h3><p>Final fitting before the big day.</p></div></li><li><b>4</b><div><h3>Delivery on time</h3><p>Ready before the function, not after.</p></div></li></ul></div></div></section>
+
+<section id="enquire"><div class="wrap enq"><div><p class="lab">Visit &amp; enquire</p><h2>Tell us the <em>date.</em></h2><p style="color:var(--mute);margin-top:18px;max-width:420px">Share the occasion and when you need it. The studio replies on WhatsApp with options and availability.</p><p style="margin-top:22px;font-size:.92rem">Call <a href="tel:09910023926">099100 23926</a><br><span style="color:var(--mute)">Karol Bagh, New Delhi. Add real address and hours.</span></p></div>
+<div class="form"><div><label>Occasion</label><div class="chips" id="co"></div></div><div><label>Needed by</label><div class="chips" id="cw"></div></div><div><label>Name</label><input id="nm" placeholder="Your name" autocomplete="name"></div><a class="btn" id="go" href="#" style="justify-content:center">Send on WhatsApp</a></div></div></section>
+<footer>Concept demo by Kavimir for Ritika Abha. Not the official site. Photos: Unsplash contributors.</footer>
+<div class="sticky"><a class="btn" href="#looks">Open lookbook</a></div>
+<script>
+const P=[['Lilac Ruffle Lehenga','Hand-embroidered, tulle ruffle dupatta','Sangeet','img/lilac.jpg'],['Jaali Bridal Red','Zardozi on velvet, heavy dupatta','Wedding','img/jaali.jpg'],['Maroon Heirloom','Gold work, classic bridal silhouette','Wedding','img/maroon.jpg'],['Fuchsia Festive','Gota work, lightweight for dancing','Festive','img/pink.jpg'],['Slate Cape Set','Co-ord with embroidered blouse','Evening','img/grey.jpg'],['Noir Gold Skirt Set','Statement shoulder, evening glamour','Evening','img/black.jpg'],['Marigold Tapestry','Rich zari, festive and wedding guest','Festive','img/gold.jpg'],['Midnight Gharara','Twirl-ready for the sangeet night','Sangeet','img/night.jpg']];
+const OC=['All','Wedding','Sangeet','Festive','Evening'];let oc='All';
+const R=document.getElementById('rail'),F=document.getElementById('filt');
+R.innerHTML=P.map(p=>`<div class="look" data-o="${p[2]}"><div class="im"><img src="${p[3]}" alt="${p[0]}" loading="lazy"></div><h3>${p[0]}</h3><p>${p[1]} · ${p[2]}</p><a target="_blank" rel="noopener" href="https://wa.me/919910023926?text=${encodeURIComponent('Hi Ritika Abha! I like the "'+p[0]+'" look. Is something similar available? Please share price and availability.')}">Ask about this look</a></div>`).join('');
+F.innerHTML=OC.map(o=>`<button class="${o==oc?'on':''}">${o}</button>`).join('');
+F.onclick=e=>{if(e.target.tagName!='BUTTON')return;oc=e.target.textContent;[...F.children].forEach(b=>b.classList.toggle('on',b==e.target));R.querySelectorAll('.look').forEach(l=>l.classList.toggle('hide',oc!='All'&&l.dataset.o!=oc));R.scrollTo({left:0})};
+const st={o:'Wedding',w:'Within a month'};
+function chips(id,arr,k){const el=document.getElementById(id);el.innerHTML=arr.map(a=>`<button class="${st[k]==a?'on':''}">${a}</button>`).join('');el.onclick=e=>{if(e.target.tagName!='BUTTON')return;st[k]=e.target.textContent;chips(id,arr,k);go()}}
+chips('co',['Wedding','Sangeet','Festive','Evening','Gifting'],'o');chips('cw',['This week','Within a month','1 to 3 months','Just browsing'],'w');
+function go(){const n=document.getElementById('nm').value.trim();document.getElementById('go').href='https://wa.me/919910023926?text='+encodeURIComponent(`Hi Ritika Abha! I'm looking for ${st.o} wear, needed ${st.w.toLowerCase()}.${n?' Name: '+n+'.':''} Please share options.`)}
+document.getElementById('nm').oninput=go;go();
+document.getElementById('mq').innerHTML=Array(8).fill('Lehenga<i>✦</i>Saree<i>✦</i>Gharara<i>✦</i>Suit<i>✦</i>Bridal<i>✦</i>').join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+</script>
+</body></html>
